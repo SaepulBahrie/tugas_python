@@ -26,24 +26,25 @@ while(tanya == "Y"):
                 traversal = self.preorder_print(start.right, traversal)
             return traversal
 
+    cuaca = input(str("input cuaca [hujan,angin,lembab,cerah] :"))
     root = input(str("input akar :"))
     simpul_kiri = input(str("input simpul_kiri :"))
     simpul_kanana = input(str("input simpul_kanana :"))
     ranting_kiri_kiri = input(str("input ranting_kiri_kiri :"))
-    ranting_kiri_kanan = input(str("input ranting_kiri_kanan :"))
-    ranting_kanan_kiri = input(str("input ranting_kanan_kiri :"))
-    ranting_kanan_kanan = input(str("input ranting_kanan_kanan :"))
 
     tree = BinaryTree(root)
     tree.root.left = Node(simpul_kiri)
     tree.root.right = Node(simpul_kanana)
     tree.root.left.left = Node(ranting_kiri_kiri)
-    tree.root.left.right = Node(ranting_kiri_kanan)
-    tree.root.right.left = Node(ranting_kanan_kiri)
-    tree.root.right.right = Node(ranting_kanan_kanan)
     print()
     print(tree.print_tree("preorder"))
     print()
+    if (cuaca == "hujan") or (cuaca == "angin"):
+        print("tidak bisa main cuaca sedang ", cuaca)
+    elif (cuaca == "lembab") or (cuaca == "cerah"):
+        print("bisa main karena cuaca sedang ", cuaca)
+    else:
+        print("cuaca salah ", cuaca)
     tanya = input(str("apakah anda ingin mengulangnya ?  [Y/N] : "))
     print()
 
